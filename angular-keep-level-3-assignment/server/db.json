@@ -1,0 +1,40 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 6 pm",
+      "state": "completed"
+    },
+    {
+      "id": 2,
+      "title": "Call Ravi",
+      "text": "Track the new submissions",
+      "state": "started"
+    },
+    {
+      "title": "Capitalism",
+      "text": "Mark Twain",
+      "id": 3,
+      "state": "completed"
+    },
+    {
+      "title": "pooja hj",
+      "text": "facing problem",
+      "state": "finally completed",
+      "id": 4
+    },
+    {
+      "title": "test5",
+      "text": "notes",
+      "state": "started",
+      "id": 5
+    },
+    {
+      "title": "hhhh",
+      "text": "kkkkk",
+      "state": "completed",
+      "id": 6
+    }
+  ]
+}

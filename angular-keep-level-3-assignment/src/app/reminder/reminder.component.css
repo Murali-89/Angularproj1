@@ -1,0 +1,17 @@
+.reminder-list{
+
+    display: flex ;
+    flex-wrap: wrap; 
+  }
+  
+  .reminder-container{
+      justify-content: center;
+      display: flex ;
+      flex-wrap: wrap; 
+      padding-bottom: 5em;
+  }
+  .reminder-list-name{
+  justify-content: center;
+    padding-left:20vh;
+    padding-right:20vh;
+  }

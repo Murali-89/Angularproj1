@@ -1,0 +1,35 @@
+<label class="error-message">{{ errMessage }}</label>
+<div class="register-container">
+  <mat-card>
+      <div class="register-wrapper">
+<form class="login-form" (submit)='loginSubmit()' >
+  <mat-form-field>
+    <input class="userName"placeholder="User Name"  matInput [formControl]='userName'>
+    <mat-error *ngIf = 'userName.invalid'>{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input class="firstName" placeholder="First name" matInput type = 'text' [formControl]='firstName'>
+    <mat-error *ngIf = 'firstName.invalid'>{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input class="lastName" placeholder="Last name" matInput type = 'text' [formControl]='lastName'>
+    <mat-error *ngIf = 'lastName.invalid'>{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input class="userPassword" placeholder="Password" matInput type = 'Password' [formControl]='userPassword'>
+    <mat-error *ngIf = 'userPassword.invalid'>{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input class="userMobile" placeholder="Mobile Number" matInput type = 'text' [formControl]='userMobile'><br/>
+    <mat-error *ngIf = 'userMobile.invalid'>{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Register</button><br/>
+  <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+  <mat-error *ngIf = 'submitMessage' class="error-message">{{submitMessage}}</mat-error>
+</form>
+</div>
+</mat-card>
+</div>

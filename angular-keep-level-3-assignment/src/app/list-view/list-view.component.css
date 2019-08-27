@@ -1,0 +1,10 @@
+.keep-c-note-container {
+    padding: 40px;
+    display: flex;
+  }
+  .keep-c-list-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+
+  }

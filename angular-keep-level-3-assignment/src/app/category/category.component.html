@@ -1,0 +1,30 @@
+<div class="category-list-name">
+    <mat-card [style.backgroundColor]="'green'" >Add New Category</mat-card>
+ </div>
+
+<div class="category-container">
+
+   
+    <form class="login-form" (submit)='saveCategory()' >
+       
+      <mat-form-field>
+        <input class="name" placeholder="Category Name"  matInput [formControl]='name'>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input class="description" placeholder="Category Description" matInput [formControl]='description'>
+      </mat-form-field>
+    
+     
+      <button mat-button type="submit">Save</button>
+      <button mat-button (click)="goToNotes()">Go to Notes</button>
+      <mat-error *ngIf = 'submitMessage' class="error-message">{{submitMessage}}</mat-error>
+    </form>
+
+  </div>  
+     <div class="category-list-name">
+        <mat-card [style.backgroundColor]="'green'" >Category List</mat-card>
+     </div>
+     <div class="category-list"> 
+      <app-categorydetails [category]='category' *ngFor="let category of categories"></app-categorydetails> 
+    </div>

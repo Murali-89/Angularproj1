@@ -1,0 +1,17 @@
+.category-list{
+
+  display: flex ;
+  flex-wrap: wrap; 
+}
+
+.category-container{
+    justify-content: center;
+    display: flex ;
+    flex-wrap: wrap; 
+    padding-bottom: 5em;
+}
+.category-list-name{
+justify-content: center;
+  padding-left:20vh;
+  padding-right:20vh;
+}

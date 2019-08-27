@@ -1,0 +1,30 @@
+<div class="reminder-list-name">
+    <mat-card [style.backgroundColor]="'green'" >Add New Reminder</mat-card>
+ </div>
+
+<div class="reminder-container">
+
+   
+    <form class="login-form" (submit)='saveReminder()' >
+       
+      <mat-form-field>
+        <input class="name" placeholder="Reminder Name"  matInput [formControl]='name'>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input class="description" placeholder="Reminder Description" matInput [formControl]='description'>
+      </mat-form-field>
+    
+     
+      <button mat-button type="submit">Save</button>
+      <button mat-button (click)="goToNotes()">Go to Notes</button>
+      <mat-error *ngIf = 'submitMessage' class="error-message">{{submitMessage}}</mat-error>
+    </form>
+
+  </div>  
+     <div class="reminder-list-name">
+        <mat-card [style.backgroundColor]="'green'" >Reminder List</mat-card>
+     </div>
+     <div class="reminder-list"> 
+      <app-reminderdetails [reminder]='reminder' *ngFor="let reminder of reminders"></app-reminderdetails> 
+    </div>
