@@ -1,0 +1,66 @@
+version: '3'
+Services:
+  mysql:
+    image: mysql:final
+    ports:
+    - 3306:3306
+    Container_name: mysql-docker
+    network_mode: host
+    environment:
+      mysql_DATABASE: UserAuthDB
+      mysql_USER: root
+      mysql_password: root
+  Authentication-Service:
+    image: UserAuthentication-Service
+    build: UserAuthentication-Service/
+    restart: always
+    network_mode: host
+    container_name: UserAuthentication-docker
+    depends_on: -mysql
+    ports:
+    - 8089:8089
+    expose: -8089
+  Note-Service:
+    image: Reminder-Service
+    build: Reminder-Service/
+    restart: always
+    network_mode: host
+    container_name: Reminder-docker
+    depends_on:
+    - ReminderServiceDB
+    ports:
+    - 8081:8081
+    expose:
+    - 8081
+    Category-Service: null
+    Reminder-Service: null
+  CategoryServiceDB:
+    image: CategoryServiceDB
+    container_name: myappCategory
+    ports:
+    - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_DATABASE: CategoryServiceDB
+      MONGO_INITDB_ROOT_USERNAME: null
+      MONGO_INITDB_ROOT_PASSWORD: null
+  NoteServiceDB:
+    image: NoteServiceDB
+    container_name: myappNote
+    ports:
+    - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_DATABASE: NoteServiceDB
+      MONGO_INITDB_ROOT_USERNAME: null
+      MONGO_INITDB_ROOT_PASSWORD: null
+  ReminderServiceDB:
+    image: ReminderServiceDB
+    container_name: myappReminder
+    ports:
+    - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_DATABASE: ReminderServiceDB
+      MONGO_INITDB_ROOT_USERNAME: null
+      MONGO_INITDB_ROOT_PASSWORD: null
